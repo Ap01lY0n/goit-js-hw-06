@@ -13,7 +13,10 @@ const images = [
   },
 ];
 const galleryList = document.querySelector(".gallery");
-const galleryMarkup = images.map((image) =>`<li class="gallery-item"><img src="${image.url}" alt="${image.alt}"></li>`).join("");
+const galleryMarkup = images.map((image) =>
+`<li class="gallery-item">
+<img src="${image.url}" alt="${image.alt}">
+</li>`).join("");
 const galleryItemClass = "gallery-item";
 const imageClass = "gallery-image";
 const galleryStyles = document.createElement("style");
