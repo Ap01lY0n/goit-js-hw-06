@@ -14,23 +14,9 @@ const images = [
 ];
 const galleryList = document.querySelector(".gallery");
 const galleryMarkup = images.map((image) =>
-`<li class="gallery-item">
-<img src="${image.url}" alt="${image.alt}">
-</li>`).join("");
-const galleryItemClass = "gallery-item";
-const imageClass = "gallery-image";
-const galleryStyles = document.createElement("style");
-galleryStyles.innerHTML = `
-  .${galleryItemClass} {
-    margin: 10px;
-  }
-  
-  .${imageClass} {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 4px;
-  }
-`;
-document.head.appendChild(galleryStyles);
+  `<li class="gallery-item" style="margin: 10px;">
+    <img src="${image.url}" alt="${image.alt}" style="width: 200px; height: 150px; object-fit: cover; border-radius: 4px;">
+  </li>`
+).join("");
+
 galleryList.insertAdjacentHTML("beforeend", galleryMarkup);
